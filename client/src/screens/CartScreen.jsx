@@ -21,7 +21,7 @@ import OrderSummary from '../components/OrderSummary';
 const CartScreen = () => {
 	const { loading, error, cartItems } = useSelector((state) => state.cart);
 
-	const getHeadingContent = () => (cartItems.length === 1 ? '(1 Item)' : `(${cartItems.length} Items)`);
+	//const getHeadingContent = () => (cartItems.length === 1 ? '(1 Item)' : `(${cartItems.length} Items)`);
 
 	return (
 		<Wrap spacing='30px' justify='center' minHeight='100vh'>
