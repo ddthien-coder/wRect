@@ -1,9 +1,12 @@
 import { ChakraProvider } from '@chakra-ui/react'
+import ProductScreen from './screens/ProductsScreen';
 
 function App() {
   return (
     <ChakraProvider>
-     wRect App
+     <ProductScreen>
+      
+     </ProductScreen>
   </ChakraProvider>
   );
 }

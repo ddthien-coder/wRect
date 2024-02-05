@@ -6,7 +6,9 @@
   "create": "2/2/2024",
   "type": "module",
   "scripts": {
-    "server": "node server/index.js"
+    "server": "node server/index.js",
+    "client": "npm run start --prefix client",
+    "app": "concurrently npm \"npm run server\" \"npm run client\""
   },
   "keywords": [],
   "author": "ddthien",
