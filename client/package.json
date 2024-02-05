@@ -8,6 +8,7 @@
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
+    "@react-oauth/google": "^0.12.1",
     "@reduxjs/toolkit": "^2.1.0",
     "axios": "^1.6.7",
     "formik": "^2.4.5",
