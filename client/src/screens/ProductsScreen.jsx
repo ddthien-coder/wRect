@@ -9,7 +9,7 @@ const ProductsScreen = () => {
 	const { loading, products } = useSelector((state) => state.product);
 
 	useEffect(() => {
-		dispatch(getProducts());
+		dispatch(getProducts(1));
 	}, [dispatch]);
 
 	return (
