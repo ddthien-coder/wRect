@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
-// eslint-disable-next-line no-unused-vars
-import { useParams, Link as ReactLink } from 'react-router-dom';
+import { useParams} from 'react-router-dom';
 import { verifyEmail } from '../redux/actions/userActions';
 import { useDispatch, useSelector } from 'react-redux';
 import {
