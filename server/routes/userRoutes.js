@@ -3,6 +3,7 @@ import User from '../models/User.js';
 import asyncHandler from 'express-async-handler';
 import jwt from 'jsonwebtoken';
 import { sendVerificationEmail } from '../middleware/sendVerificationEmail.js';
+import { sendPasswordResetEmail } from '../middleware/sendPasswordResetEmail.js';
 
 const userRoutes = express.Router();
 
@@ -94,9 +95,45 @@ const verifyEmail = asyncHandler(async (req, res) => {
 	}
 });
 
+// password reset request
+const passwordResetRequest = asyncHandler(async (req, res) => {
+	const { email } = req.body;
+	try {
+		const user = await User.findOne({ email: email });
+		if (user) {
+			const newToken = genToken(user._id);
+			sendPasswordResetEmail(newToken, user.email, user.name);
+			res.status(200).send(`We have send you a recover email to ${email}`);
+		}
+	} catch (error) {
+		res.status(401).send('There is not account with such an email address');
+	}
+});
+
+// password reset
+const passwordReset = asyncHandler(async (req, res) => {
+	const token = req.headers.authorization.split(' ')[1];
+	try {
+		const decoded = jwt.verify(token, process.env.TOKEN_SECRET);
+		const user = await User.findById(decoded.id);
+
+		if (user) {
+			user.password = req.body.password;
+			await user.save();
+			res.json('Your password has been updated successfully.');
+		} else {
+			res.status(404).send('User not found.');
+		}
+	} catch (error) {
+		res.status(401).send('Password reset failed.');
+	}
+});
+
 
 userRoutes.route('/login').post(loginUser);
 userRoutes.route('/register').post(registerUser);
 userRoutes.route('/verify-email').get(verifyEmail);
+userRoutes.route('/password-reset-request').post(passwordResetRequest);
+userRoutes.route('/password-reset').post(passwordReset);
 
 export default userRoutes;
