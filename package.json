@@ -24,9 +24,11 @@
     "jwt-decode": "^4.0.0",
     "mongodb": "^6.3.0",
     "mongoose": "^8.1.1",
+    "nodemailer": "^6.9.9",
     "stripe": "^14.14.0"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@babel/plugin-transform-private-property-in-object": "^7.23.4"
   }
 }
