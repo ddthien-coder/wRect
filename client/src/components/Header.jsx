@@ -26,7 +26,7 @@ import {
 import { useEffect, useState } from 'react';
 import { BsPhoneFlip } from 'react-icons/bs';
 import { Link as ReactLink } from 'react-router-dom';
-import { MdOutlineFavorite, MdOutlineFavoriteBorder } from 'react-icons/md';
+import { MdOutlineAdminPanelSettings, MdOutlineFavorite, MdOutlineFavoriteBorder } from 'react-icons/md';
 import { useDispatch, useSelector } from 'react-redux';
 import NavLink from './NavLink';
 import ColorModeToggle from './ColorModeToggle';
@@ -168,8 +168,9 @@ const Header = () => {
 									{userInfo.isAdmin && (
 										<>
 											<MenuDivider />
-											<MenuItem as={ReactLink} to='/admin-console'>
-												Admin Console
+											<MenuItem as={ReactLink} to={'/admin-console'}>
+												<MdOutlineAdminPanelSettings />
+												<Text ml='2'>Admin Console</Text>
 											</MenuItem>
 										</>
 									)}

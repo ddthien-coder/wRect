@@ -17,6 +17,7 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 import BlogScreen from './screens/BlogScreens';
 import ContactScreen from './screens/ContactScreens';
 import ServiceScreens from './screens/ServiceScreens';
+import AdminConsoleScreen from './screens/AdminConsoleScreen';
 
 function App() {
 	const [googleClient, setGoogleClient] = useState(null);
@@ -50,6 +51,7 @@ function App() {
 							<Route path='/registration' element={<RegistrationScreen />} />
 							<Route path='/email-verify/:token' element={<EmailVerificationScreen />} />
 							<Route path='/password-reset/:token' element={<PasswordResetScreen />} />
+							<Route path='/admin-console' element={<AdminConsoleScreen />} />
 						</Routes>
 					</main>
 					<Footer />
