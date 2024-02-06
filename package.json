@@ -6,7 +6,7 @@
   "create": "2/2/2024",
   "type": "module",
   "scripts": {
-    "server": "nodemon server/index.js",
+    "server": "node server/index.js",
     "client": "npm run start --prefix client",
     "app": "concurrently npm \"npm run server\" \"npm run client\""
   },
@@ -25,7 +25,6 @@
     "mongodb": "^6.3.0",
     "mongoose": "^8.1.1",
     "nodemailer": "^6.9.9",
-    "nodemon": "^3.0.3",
     "stripe": "^14.14.0"
   },
   "devDependencies": {
