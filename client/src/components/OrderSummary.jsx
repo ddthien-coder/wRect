@@ -1,15 +1,13 @@
 import React from 'react';
-import { Button, Flex, Heading, Stack, Text, useColorModeValue as mode } from '@chakra-ui/react';
-import { FaArrowRight } from 'react-icons/fa';
+import { Alert,  AlertIcon, Flex, Heading, Stack, Text, useColorModeValue as mode } from '@chakra-ui/react';
 import { useSelector } from 'react-redux';
-import { Link as ReactLink } from 'react-router-dom';
 
 const OrderSummary = () => {
 	const { subtotal, shipping } = useSelector((state) => state.cart);
 
 	return (
 		<Stack
-			minWidth='300px'
+			minWidth='350px'
 			spacing='8'
 			borderWidth='1px'
 			borderColor={mode('cyan.500', 'cyan.100')}
@@ -37,9 +35,14 @@ const OrderSummary = () => {
 					<Text fontWeight='medium'>${Number(subtotal) + Number(shipping)}</Text>
 				</Flex>
 			</Stack>
-			<Button as={ReactLink} to='/checkout' colorScheme='cyan' size='lg' rightIcon={<FaArrowRight />}>
+			<Alert status='warning'>
+				<AlertIcon />
+				Chức năng hiện đang trong quá trình phát triễn
+				Hoặc không khả dụng 
+			</Alert>
+			{/* <Button disabled as={ReactLink} to='/checkout' colorScheme='cyan' size='lg' rightIcon={<FaArrowRight />}>
 				Checkout
-			</Button>
+			</Button> */}
 		</Stack>
 	);
 };

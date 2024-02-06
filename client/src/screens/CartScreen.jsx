@@ -5,7 +5,6 @@ import {
 	HStack,
 	Link,
 	Stack,
-	useColorModeValue as mode,
 	Spinner,
 	Alert,
 	AlertIcon,
@@ -66,10 +65,12 @@ const CartScreen = () => {
 							<OrderSummary />
 
 							<HStack mt='6' fontWeight='semibold'>
-								<p>or</p>
-								<Link as={ReactLink} to='/products' color={mode('cyan.500', 'cyan.200')}>
-									Continue Shopping
-								</Link>
+								<Alert status='warning'>
+									<AlertIcon />
+										Liên hệ: Đinh Đức Thiện
+										<br></br>
+										Zalo: 0123456789
+								</Alert>
 							</HStack>
 						</Flex>
 					</Stack>
