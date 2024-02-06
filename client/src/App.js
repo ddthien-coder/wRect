@@ -29,36 +29,39 @@ function App() {
 		googleKey();
 	}, [googleClient]);
 
-	return !googleClient ? (
-		<VStack pt='37vh'>
-			<Spinner mt='20' thickness='2px' speed='0.65s' emptyColor='gray.200' color='cyan.500' size='xl' />
-		</VStack>
-	) : (
-		<GoogleOAuthProvider clientId={googleClient}>
-			<ChakraProvider>
-				<Router>
-					<Header />
-					<main>
-						<Routes>
-							<Route path='/products' element={<ProductsScreen />} />
-							<Route path='/' element={<LandingScreen />} />
-							<Route path='/product/:id' element={<ProductScreen />} />
-							<Route path='/cart' element={<CartScreen />} />
-							<Route path='/blog' element={<BlogScreen />} />
-							<Route path='/contact' element={<ContactScreen />} />
-							<Route path='/service' element={<ServiceScreens />} />
-							<Route path='/login' element={<LoginScreen />} />
-							<Route path='/registration' element={<RegistrationScreen />} />
-							<Route path='/email-verify/:token' element={<EmailVerificationScreen />} />
-							<Route path='/password-reset/:token' element={<PasswordResetScreen />} />
-							<Route path='/admin-console' element={<AdminConsoleScreen />} />
-						</Routes>
-					</main>
-					<Footer />
-				</Router>
-			</ChakraProvider>
-		</GoogleOAuthProvider>
+	return (
+		<ChakraProvider>
+			{!googleClient ? (
+				<VStack pt='37vh'>
+					<Spinner mt='20' thickness='2px' speed='0.65s' emptyColor='gray.200' color='cyan.500' size='xl' />
+				</VStack>
+			) : (
+				<GoogleOAuthProvider clientId={googleClient}>
+					<Router>
+						<Header />
+						<main>
+							<Routes>
+								<Route path='/products' element={<ProductsScreen />} />
+								<Route path='/' element={<LandingScreen />} />
+								<Route path='/product/:id' element={<ProductScreen />} />
+								<Route path='/cart' element={<CartScreen />} />
+								<Route path='/login' element={<LoginScreen />} />
+								<Route path='/registration' element={<RegistrationScreen />} />
+								<Route path='/email-verify/:token' element={<EmailVerificationScreen />} />
+								<Route path='/password-reset/:token' element={<PasswordResetScreen />} />
+								<Route path='/blog' element={<BlogScreen />} />
+								<Route path='/contact' element={<ContactScreen />} />
+								<Route path='/service' element={<ServiceScreens />} />
+								<Route path='/admin-console' element={<AdminConsoleScreen />} />
+							</Routes>
+						</main>
+						<Footer />
+					</Router>
+				</GoogleOAuthProvider>
+			)}
+		</ChakraProvider>
 	);
 }
+
 
 export default App;
