@@ -14,6 +14,9 @@ import axios from 'axios';
 import { VStack, Spinner } from '@chakra-ui/react';
 import { useState, useEffect } from 'react';
 import { GoogleOAuthProvider } from '@react-oauth/google';
+import BlogScreen from './screens/BlogScreens';
+import ContactScreen from './screens/ContactScreens';
+import ServiceScreens from './screens/ServiceScreens';
 
 function App() {
 	const [googleClient, setGoogleClient] = useState(null);
@@ -40,6 +43,9 @@ function App() {
 							<Route path='/' element={<LandingScreen />} />
 							<Route path='/product/:id' element={<ProductScreen />} />
 							<Route path='/cart' element={<CartScreen />} />
+							<Route path='/blog' element={<BlogScreen />} />
+							<Route path='/contact' element={<ContactScreen />} />
+							<Route path='/service' element={<ServiceScreens />} />
 							<Route path='/login' element={<LoginScreen />} />
 							<Route path='/registration' element={<RegistrationScreen />} />
 							<Route path='/email-verify/:token' element={<EmailVerificationScreen />} />

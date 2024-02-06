@@ -40,9 +40,9 @@ import { googleLogout } from '@react-oauth/google';
 
 const Links = [
 	{ name: 'Products', route: '/products' },
-	{ name: 'Hot Deals', route: '/hot-deals' },
+	{ name: 'Blog', route: '/blog' },
 	{ name: 'Contact', route: '/contact' },
-	{ name: 'Services', route: '/services' },
+	{ name: 'Services', route: '/service' },
 ];
 
 const Header = () => {
