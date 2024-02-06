@@ -44,10 +44,18 @@ export const productsSlice = createSlice({
 		setFavoritesToggle: (state, { payload }) => {
 			state.favoritesToggled = payload;
 		},
+        productReviewed: (state, { payload }) => {
+			state.loading = false;
+			state.error = null;
+			state.reviewed = payload;
+		},
 	},
 });
 
-export const { setLoading, setError, setProducts, setPagination, setFavoritesToggle, setFavorites, setProduct } =
+export const { setLoading, 
+    setError, setProducts, 
+    setPagination, setFavoritesToggle, 
+    setFavorites, setProduct,productReviewed } =
 	productsSlice.actions;
 
 export default productsSlice.reducer;
