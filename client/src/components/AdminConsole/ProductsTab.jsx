@@ -21,10 +21,10 @@ import {
 } from '@chakra-ui/react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getProducts, resetProductError } from '../redux/actions/productActions';
+import { getProducts, resetProductError } from '../../redux/actions/productActions';
 
-import AddNewProduct from './AddNewProduct';
-import ProductTableItem from './ProductTableItem';
+import AddNewProduct from '../AddNewProduct';
+import ProductTableItem from '../ProductTableItem';
 
 const ProductsTab = () => {
 	const dispatch = useDispatch();

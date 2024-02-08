@@ -27,8 +27,8 @@ import {
 } from '@chakra-ui/react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { removeReview } from '../redux/actions/adminActions';
-import { getProducts } from '../redux/actions/productActions';
+import { removeReview } from '../../redux/actions/adminActions';
+import { getProducts } from '../../redux/actions/productActions';
 
 const ReviewsTab = () => {
 	const dispatch = useDispatch();

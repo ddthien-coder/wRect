@@ -21,8 +21,8 @@ import {
 import { CheckCircleIcon, DeleteIcon } from '@chakra-ui/icons';
 import { useEffect, useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllUsers, deleteUser, resetErrorAndRemoval } from '../redux/actions/adminActions';
-import ConfirmRemovalAlert from './ConfirmRemovalAlert';
+import { getAllUsers, deleteUser, resetErrorAndRemoval } from '../../redux/actions/adminActions';
+import ConfirmRemovalAlert from '../ConfirmRemovalAlert';
 
 const UsersTab = () => {
 	const { isOpen, onOpen, onClose } = useDisclosure();

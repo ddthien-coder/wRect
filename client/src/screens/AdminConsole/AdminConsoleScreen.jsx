@@ -1,9 +1,9 @@
 import { Box, Stack, Heading, Tabs, TabList, Tab, TabPanels, TabPanel } from '@chakra-ui/react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import UsersTab from '../components/UsersTab';
-import ProductsTab from '../components/ProductsTab';
-import ReviewsTab from '../components/ReviewsTab';
+import UsersTab from '../../components/AdminConsole/UsersTab';
+import ProductsTab from '../../components/AdminConsole/ProductsTab';
+import ReviewsTab from '../../components/AdminConsole/ReviewsTab';
 
 const AdminConsoleScreen = () => {
 	const { userInfo } = useSelector((state) => state.user);

@@ -17,7 +17,7 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 import BlogScreen from './screens/BlogScreens';
 import ContactScreen from './screens/ContactScreens';
 import ServiceScreens from './screens/ServiceScreens';
-import AdminConsoleScreen from './screens/AdminConsoleScreen';
+import AdminConsoleScreen from './screens/AdminConsole/AdminConsoleScreen';
 
 function App() {
 	const [googleClient, setGoogleClient] = useState(null);
